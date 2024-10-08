@@ -15,6 +15,11 @@
     .backLink {
         text-decoration: none;
         font-size: 1.2rem;
+        transition: .6s;
+    }
+
+    .backLink:hover {
+        color: $graySecondaryColor;
     }
 }
 
