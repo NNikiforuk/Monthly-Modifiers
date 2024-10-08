@@ -27,9 +27,27 @@
         .ctaLink {
             color: $whiteColor;
             box-shadow: none;
-            position: relative;
             background-color: $turquoiseSecondaryColor;
             @include graphicBox();
+        }
+    }
+
+    .challengeTitle {
+        background-color: $pinkColor;
+        @include graphicBox();
+
+        h2 {
+            font-family: 'notosansmono-bold';
+        }
+    }
+
+    .challengeDesc {
+        background-color: $greenColor;
+        @include graphicBox();
+        margin: 1rem 0;
+
+        h2 {
+            font-family: 'notosansmono-bold';
         }
     }
 

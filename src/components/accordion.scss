@@ -1,0 +1,76 @@
+@import "../styles/global.scss";
+
+.accordion {
+    margin-top: 3rem;
+
+    ul {
+        li {
+            position: relative;
+            padding: 1em 0;
+            border-bottom: 1px dotted $graySecondaryColor;
+
+            h2, p {
+                padding-right: 1.5em;
+            }
+
+            input[type="checkbox"] {
+                position: absolute;
+                cursor: pointer;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                opacity: 0;
+            }
+
+            input[type="checkbox"]:checked~p {
+                margin-top: 0;
+                max-height: 0;
+                opacity: 0;
+                transform: translate(0, 50%);
+            }
+
+            input[type="checkbox"]:checked~i:before {
+                transform: translate(2px, 0) rotate(45deg);
+            }
+
+            input[type="checkbox"]:checked~i:after {
+                transform: translate(-2px, 0) rotate(-45deg);
+            }
+
+            i {
+                position: absolute;
+                transform: translate(-6px, 0);
+                margin-top: 16px;
+                right: 0;
+            }
+
+            i:before,
+            i:after {
+                content: "";
+                transition: all 0.25s ease-in-out;
+                position: absolute;
+                background-color: $blackColor;
+                width: 3px;
+                height: 9px;
+            }
+
+            i:before {
+                transform: translate(-2px, 0) rotate(45deg);
+            }
+
+            i:after {
+                transform: translate(2px, 0) rotate(-45deg);
+            }
+
+            p {
+                color: rgba($color: $blackColor, $alpha: 0.7);
+                position: relative;
+                overflow: hidden;
+                transition: all 0.25s ease-in-out;
+                opacity: 1;
+                transform: translate(0, 0);
+                z-index: 2;
+            }
+        }
+    }
+}

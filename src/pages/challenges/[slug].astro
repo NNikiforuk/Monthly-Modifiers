@@ -4,6 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
 
 import { challenges } from "../../data/challenges";
+import Accordion from "../../components/Accordion.astro";
 
 export async function getStaticPaths() {
 	return challenges.map((challenge) => ({
@@ -22,7 +23,14 @@ if (!challenge) {
 <Layout title={`Challenge: ${challenge.title}`}>
 	<Navigation pageName="Current challenge" />
 	<main class="main">
-		<h1>{challenge.title}</h1>
-		<p>{challenge.description}</p>
+		<section class="challengeTitle">
+			<h2>Challenge title:</h2>
+			<p>{challenge.title}</p>
+		</section>
+		<section class="challengeDesc">
+			<h2>Description:</h2>
+			<p>{challenge.description}</p>
+		</section>
+		{challenge.FAQ && <Accordion faq={challenge.FAQ} />}
 	</main>
 </Layout>
