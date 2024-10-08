@@ -1,18 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
+import { challenges } from "../data/challenges";
 
 const currentDate = new Date().toLocaleDateString();
 
-export const challenges = [
-	{
-		id: 1,
-		title: "no sugar",
-		slug: "no-sugar",
-		description:
-			"Give up sugar for a month and enjoy the benefits of a healthier lifestyle",
-	},
-];
+
 ---
 
 <Layout title="Monthly Modifiers">

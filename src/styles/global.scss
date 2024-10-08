@@ -16,16 +16,12 @@
 //     margin-bottom: 1em;
 // }
 
-
-// df
-
 $primaryColor: #ff6f61;
 $secondaryColor: #ffcccb;
 $highlightColor: #00bfa6;
 $fontStack: 'Arial, sans-serif';
 
 body {
-    font-family: $fontStack;
     background: linear-gradient(90deg, $primaryColor, $secondaryColor);
     margin: 0;
     color: #333;
