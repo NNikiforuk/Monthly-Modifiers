@@ -1,6 +1,6 @@
 export const challenges = [
 	{
-		title: "No sugar",
+		title: "NO SUGAR",
 		slug: "no-sugar",
 		description: "Give up sugar for a month",
 		FAQ: [
@@ -15,7 +15,7 @@ export const challenges = [
 		],
 	},
 	{
-		title: "Only water",
+		title: "ONLY WATER",
 		slug: "only-water",
 		description: "Drink only plain water for a month",
 		FAQ: [
@@ -27,7 +27,7 @@ export const challenges = [
 	},
 	{
 		slug: "no-cheese",
-		title: "No Cheese",
+		title: "NO CHEESE",
 		description: "Eliminate all cheese from your diet",
 		FAQ: [
 			{
@@ -38,7 +38,7 @@ export const challenges = [
 	},
 	{
 		slug: "vegetarian-month",
-		title: "Vegetarian month",
+		title: "VEGETARIAN MONTH",
 		description: "Adopt a vegetarian diet for a month",
 		FAQ: [
 			{
@@ -49,17 +49,17 @@ export const challenges = [
 	},
 	{
 		slug: "no-snacks-between-meals",
-		title: "No snacks between meals",
+		title: "NO SNACKS BETWEEN MEALS",
 		description: "Eat only during designated meal times",
 	},
 	{
 		slug: "no-coffee",
-		title: "No coffee",
+		title: "NO COFFEE",
 		description: "Eliminate all sources of coffee",
 	},
 	{
 		slug: "no-alcohol",
-		title: "No alcohol",
+		title: "NO ALCOHOL",
 		description: "Abstain from all alcoholic beverages",
 		FAQ: [
 			{
@@ -70,12 +70,12 @@ export const challenges = [
 	},
 	{
 		slug: "no-fast-food",
-		title: "No fast food",
+		title: "NO FAST FOOD",
 		description: "Avoid all fast food restaurants and takeaways",
 	},
 	{
 		slug: "no-soda",
-		title: "No soda or fizzy drinks",
+		title: "NO SODA OR FIZZY DRINKS",
 		description: "Eliminate all carbonated beverages",
 		FAQ: [
 			{
@@ -86,12 +86,12 @@ export const challenges = [
 	},
 	{
 		slug: "no-tv",
-		title: "No TV",
+		title: "NO TV",
 		description: "No watching TV or streaming services",
 	},
 	{
 		slug: "no-twitter",
-		title: "No X/Twitter",
+		title: "NO X/TWITTER",
 		description: "Stay off X/Twitter for a month",
 		FAQ: [
 			{
@@ -102,12 +102,12 @@ export const challenges = [
 	},
 	{
 		slug: "no-instagram",
-		title: "No Instagram",
+		title: "NO INSTAGRAM",
 		description: "Abstain from using Instagram",
 	},
 	{
 		slug: "no-facebook",
-		title: "No Facebook",
+		title: "NO FACEBOOK",
 		description: "Stay off Facebook for a month",
 		FAQ: [
 			{
@@ -118,7 +118,7 @@ export const challenges = [
 	},
 	{
 		slug: "no-tiktok",
-		title: "No TikTok",
+		title: "NO TIKTOK",
 		description: "Avoid using TikTok",
 		FAQ: [
 			{
@@ -129,7 +129,7 @@ export const challenges = [
 	},
 	{
 		slug: "no-video-games",
-		title: "No video games",
+		title: "NO VIDEO GAMES",
 		description: "Abstain from playing all video games",
 		FAQ: [
 			{
@@ -140,7 +140,7 @@ export const challenges = [
 	},
 	{
 		slug: "no-youtube",
-		title: "No YouTube",
+		title: "NO YOUTUBE",
 		description: "Avoid watching any YouTube videos",
 		FAQ: [
 			{
@@ -151,12 +151,12 @@ export const challenges = [
 	},
 	{
 		slug: "no-music",
-		title: "Film music only",
+		title: "FILM MUSIC ONLY",
 		description: "For a month you can only listen to film music",
 	},
 	{
 		slug: "no-sitting",
-		title: "No sitting",
+		title: "NO SITTING",
 		description: "Minimize sitting throughout the day",
 		FAQ: [
 			{
@@ -167,7 +167,7 @@ export const challenges = [
 	},
 	{
 		slug: "cold-showers-only",
-		title: "Cold showers only",
+		title: "COLD SHOWERS ONLY",
 		description: "Take only cold showers",
 		FAQ: [
 			{
@@ -178,7 +178,7 @@ export const challenges = [
 	},
 	{
 		slug: "no-elevators",
-		title: "No elevators or escalators",
+		title: "NO ELEVATORS / ESCALATORS",
 		description: "Use stairs instead of elevators or escalators",
 		FAQ: [
 			{
@@ -189,7 +189,7 @@ export const challenges = [
 	},
 	{
 		slug: "no-online-shopping",
-		title: "No online shopping",
+		title: "NO ONLINE SHOPPING",
 		description: "Abstain from all forms of online shopping",
 		FAQ: [
 			{
@@ -204,7 +204,7 @@ export const challenges = [
 	},
 	{
 		slug: "no-swearing",
-		title: "No swearing",
+		title: "NO SWEARING",
 		description: "Eliminate all swear words from your vocabulary",
 		FAQ: [
 			{
@@ -215,7 +215,7 @@ export const challenges = [
 	},
 	{
 		slug: "no-complaining",
-		title: "No complaining",
+		title: "NO COMPLAINING",
 		description: "Abstain from all forms of complaining",
 		FAQ: [
 			{
@@ -226,12 +226,12 @@ export const challenges = [
 	},
 	{
 		slug: "no-hair-products",
-		title: "Use hair conditioner",
+		title: "USE HAIR CONDITIONER",
 		description: "Use hair conditioner for a month",
 	},
 	{
 		slug: "no-makeup",
-		title: "No makeup",
+		title: "NO MAKEUP",
 		description: "Go without wearing any makeup",
 		FAQ: [
 			{
@@ -241,13 +241,13 @@ export const challenges = [
 		],
 	},
 	{
-		slug: "same-outfit",
-		title: "Wear the same outfit every day",
-		description: "Wear the same or identical outfits daily",
+		slug: "time-outside",
+		title: "MINIMUM 15 MINUTES OUTSIDE PER DAY",
+		description: "Go outside for min. 15 minutes and enjoy yourself",
 		FAQ: [
 			{
-				title: "Can I have multiple copies of the outfit?",
-				answer: "Yes, for washing purposes",
+				title: "What about the balcony?",
+				answer: "No, it doesn't count",
 			},
 		],
 	},

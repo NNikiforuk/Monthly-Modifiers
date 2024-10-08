@@ -1,4 +1,5 @@
 ---
+import "../styles/index.scss";
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import { challenges } from "../data/challenges";
@@ -15,8 +16,8 @@ const boltIcon = "/icons/bolt.svg";
 		</section>
 		<section class="currentChallenge">
 			<h2>Current challenge:</h2>
-			<a href={`/challenges/${challenges[0].slug}`} class="ctaLink"
-				>{challenges[0].title}</a
+			<a href={`/challenges/${challenges[25].slug}`} class="ctaLink"
+				>{challenges[25].title}</a
 			>
 		</section>
 		<section class="FAQ">

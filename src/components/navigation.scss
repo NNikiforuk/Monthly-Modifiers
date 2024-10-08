@@ -6,6 +6,7 @@
     align-items: center;
     padding: 20px;
     max-width: $maxWidth;
+    margin: 0 auto;
 
     .siteTitle {
         font-size: 1rem;
@@ -17,10 +18,16 @@
         text-decoration: none;
         font-size: 1.2rem;
     }
+}
 
-    @media screen and (min-width: 768px) {
-        .siteTitle {
-            font-size: 2.4rem;
-        }
+@media screen and (min-width: 768px) {
+    .nav {
+        max-width: $maxWidth768px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .nav {
+        max-width: $maxWidth1200px;
     }
 }

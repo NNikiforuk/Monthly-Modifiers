@@ -1,0 +1,80 @@
+@import "./global.scss";
+
+.main {
+    max-width: $maxWidth;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    padding: 1em;
+
+    .currentDate {
+        background-color: $yellowColor;
+        @include graphicBox()
+    }
+
+    .currentChallenge {
+        font-family: 'notosansmono-bold';
+        background-color: $turquoiseColor;
+        gap: 1.5rem;
+        flex-direction: column;
+        margin: 1rem 0;
+        display: flex;
+        @include graphicBox();
+
+        .ctaLink {
+            color: $whiteColor;
+            box-shadow: none;
+            position: relative;
+            background-color: $turquoiseSecondaryColor;
+            @include graphicBox();
+        }
+    }
+
+    .FAQ {
+        margin-top: 3rem;
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        ul li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main {
+        max-width: $maxWidth768px;
+        margin: 2rem auto;
+
+        .FAQ ul li {
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .main {
+        max-width: $maxWidth1200px;
+        margin: 2rem auto 4rem auto;
+
+        .currentChallenge {
+            .ctaLink {
+                transition: .6s;
+            }
+
+            .ctaLink:hover {
+                background-color: $turquoiseTertiaryColor;
+            }
+        }
+
+        .FAQ h2 {
+            font-family: "notosansmono-bold";
+        }
+    }
+}
