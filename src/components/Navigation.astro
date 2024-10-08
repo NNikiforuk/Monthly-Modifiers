@@ -1,0 +1,18 @@
+---
+import "./navigation.scss";
+
+const { pageName } = Astro.props;
+---
+
+<nav class={`navBar ${pageName === "challenge" ? "navBarTask" : ""}`}>
+	<h1 class="siteTitle">Monthly</h1>
+	{
+		pageName === "challenge" ? (
+			<a class="backLink" href="/">
+				← Back to Homepage
+			</a>
+		) : (
+			<div class="homeNav">Learn & Grow!</div>
+		)
+	}
+</nav>

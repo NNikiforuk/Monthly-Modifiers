@@ -1,0 +1,57 @@
+// main {
+//     margin: auto;
+//     padding: 1rem;
+//     width: 800px;
+//     max-width: calc(100% - 2rem);
+//     color: black;
+//     font-size: 20px;
+//     line-height: 1.6;
+// }
+
+// h1 {
+//     font-size: 4rem;
+//     font-weight: 700;
+//     line-height: 1;
+//     text-align: center;
+//     margin-bottom: 1em;
+// }
+
+
+// df
+
+$primaryColor: #ff6f61;
+$secondaryColor: #ffcccb;
+$highlightColor: #00bfa6;
+$fontStack: 'Arial, sans-serif';
+
+body {
+    font-family: $fontStack;
+    background: linear-gradient(90deg, $primaryColor, $secondaryColor);
+    margin: 0;
+    color: #333;
+}
+
+.layoutBody {
+    padding: 20px;
+}
+
+.homeMain {
+    text-align: center;
+
+    .challengeSection {
+        margin: 20px 0;
+
+        .ctaLink {
+            color: #fff;
+            background-color: $highlightColor;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: $highlightColor;
+            }
+        }
+    }
+}

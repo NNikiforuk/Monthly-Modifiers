@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "../../components/Navigation.astro";
+
+import { challenges } from "../index.astro";
+
+export async function getStaticPaths() {
+	return challenges.map((challenge) => ({
+		params: { slug: challenge.slug },
+	}));
+}
+
+const { slug } = Astro.params;
+const challenge = challenges.find((c) => c.slug === slug);
+
+if (!challenge) {
+	throw new Error(`Challenge not found for slug: ${slug}`);
+}
+---
+
+<Layout title={`Challenge: ${challenge.title}`}>
+	<Navigation pageName="task" />
+	<main>
+		<h1>{challenge.title}</h1>
+		<p>{challenge.description}</p>
+		<a href="/">← Back to Home</a>
+	</main>
+</Layout>
