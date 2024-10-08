@@ -1,4 +1,5 @@
 ---
+import "../../styles/index.scss";
 import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
 
@@ -20,9 +21,8 @@ if (!challenge) {
 
 <Layout title={`Challenge: ${challenge.title}`}>
 	<Navigation pageName="Current challenge" />
-	<main>
+	<main class="main">
 		<h1>{challenge.title}</h1>
 		<p>{challenge.description}</p>
-		<a href="/">← Back to Home</a>
 	</main>
 </Layout>

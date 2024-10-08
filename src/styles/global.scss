@@ -10,9 +10,14 @@ $whiteColor: #f3f7f7;
 $maxWidth: 400px;
 $maxWidth768px: 550px;
 $maxWidth1200px: 1400px;
+$maxWidth2560px: 700px;
+$maxWidth3840px: 900px;
 $buttonPadding: 10px 20px;
 $buttonPadding768px: 20px 40px;
+$buttonPadding2560px: 50px 100px;
 $borderRadius: 15px;
+$fontSize2560px: 1.8rem;
+$fontSize3840px: 2.5rem;
 
 @mixin graphicBox {
     border-radius: $borderRadius;
@@ -25,9 +30,18 @@ $borderRadius: 15px;
 
     @media (min-width: 768px) {
         padding: $buttonPadding768px;
-        max-width: 400px;
-    };
-};
+        max-width: $maxWidth;
+    }
+
+    @media (min-width: 2560px) {
+        padding: $buttonPadding2560px;
+        max-width: $maxWidth2560px;
+    }
+
+    @media (min-width: 3840px) {
+        max-width: $maxWidth3840px;
+    }
+}
 
 @font-face {
     font-family: 'notosansmono-bold';
@@ -55,6 +69,7 @@ $borderRadius: 15px;
 
 html {
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 body {
@@ -62,6 +77,9 @@ body {
     overflow-x: hidden;
     color: $blackColor;
     font-family: 'notosansmono';
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
 }
 
 h2 {
@@ -75,4 +93,17 @@ a {
 
 ul {
     list-style: none;
+}
+
+@media screen and (min-width: 2560px) {
+    body, h1, h2 {
+        font-size: $fontSize2560px;
+    }
+}
+
+
+@media screen and (min-width: 3840px) {
+    body, h1, h2 {
+        font-size: $fontSize3840px;
+    }
 }

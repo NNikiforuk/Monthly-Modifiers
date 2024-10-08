@@ -5,13 +5,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    max-width: $maxWidth;
-    margin: 0 auto;
 
     .siteTitle {
         font-size: 1rem;
-        font-weight: bold;
         max-width: 50px;
+        font-family: 'notosansmono-bold';
     }
 
     .backLink {
@@ -22,12 +20,39 @@
 
 @media screen and (min-width: 768px) {
     .nav {
-        max-width: $maxWidth768px;
+        margin: 0 1rem;
     }
 }
 
 @media screen and (min-width: 1200px) {
     .nav {
-        max-width: $maxWidth1200px;
+        margin: 0 5rem;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .nav {
+        margin: 0 10rem;
+        padding: 50px;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .nav {
+        margin: 0 20rem;
+
+        .siteTitle {
+            font-size: $fontSize2560px;
+        }
+    }
+}
+
+@media screen and (min-width: 3840px) {
+    .nav {
+        margin: 0 40rem;
+
+        .siteTitle {
+            font-size: $fontSize3840px;
+        }
     }
 }

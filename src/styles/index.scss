@@ -9,6 +9,7 @@
     margin: 1rem auto;
     padding: 1em;
 
+
     .currentDate {
         background-color: $yellowColor;
         @include graphicBox()
@@ -37,6 +38,7 @@
 
         h2 {
             margin-bottom: 1rem;
+            font-family: "notosansmono-bold";
         }
 
         ul li {
@@ -73,8 +75,46 @@
             }
         }
 
-        .FAQ h2 {
-            font-family: "notosansmono-bold";
+        .FAQ ul li {
+            gap: 1em;
+        }
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .main {
+        .currentChallenge {
+            margin: 2rem 0;
+        }
+
+        .FAQ {
+            h2 {
+                margin-bottom: 2rem;
+            }
+
+            ul li {
+                gap: .7em;
+
+                img {
+                    width: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 3840px) {
+    .main .FAQ {
+        h2 {
+            margin-bottom: 2em;
+        }
+
+        ul li {
+            margin-bottom: 3rem;
+
+            img {
+                width: 45px;
+            }
         }
     }
 }
