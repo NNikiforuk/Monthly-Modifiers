@@ -1,21 +1,19 @@
 @import "../styles/global.scss";
 
-.navBar {
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: $highlightColor;
+    padding: 20px;
+    max-width: $maxWidth;
 
     .siteTitle {
-        font-size: 1.8rem;
+        font-size: 1rem;
         font-weight: bold;
-        color: #fff;
+        max-width: 50px;
     }
 
-    .backLink,
-    .homeNav {
-        color: #fff;
+    .backLink {
         text-decoration: none;
         font-size: 1.2rem;
     }

@@ -3,24 +3,38 @@ import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import { challenges } from "../data/challenges";
 
-const currentDate = new Date().toLocaleDateString();
-
-
+const currentMonth = new Date().toLocaleString("default", { month: "long" });
+const boltIcon = "/icons/bolt.svg";
 ---
 
 <Layout title="Monthly Modifiers">
 	<Navigation pageName="home" />
-	<main class="homeMain">
-		<section class="challengeSection">
-			<h2>Current Date: {currentDate}</h2>
-			<h3>Monthly Challenge:</h3>
+	<main class="main">
+		<section class="currentDate">
+			<h2>Current month: {currentMonth}</h2>
+		</section>
+		<section class="currentChallenge">
+			<h2>Current challenge:</h2>
 			<a href={`/challenges/${challenges[0].slug}`} class="ctaLink"
 				>{challenges[0].title}</a
 			>
 		</section>
-		<section class="faqSection">
-			<h3>FAQ</h3>
-			<p>This site provides a monthly challenge to motivate you to improve!</p>
+		<section class="FAQ">
+			<h2>FAQ</h2>
+			<ul>
+				<li>
+					<img src={boltIcon} height="auto" width="20" alt="bolt icon" />
+					This site provides challenges to motivate you to improve yourself
+				</li>
+				<li>
+					<img src={boltIcon} height="auto" width="20" alt="bolt icon" />
+					Every month we draw a challenge using the NIST Randomness Beacons
+				</li>
+				<li>
+					<img src={boltIcon} height="auto" width="20" alt="bolt icon" />
+					Show off your current challenge on your socials
+				</li>
+			</ul>
 		</section>
 	</main>
 </Layout>

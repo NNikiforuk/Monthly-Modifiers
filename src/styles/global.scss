@@ -1,53 +1,115 @@
-// main {
-//     margin: auto;
-//     padding: 1rem;
-//     width: 800px;
-//     max-width: calc(100% - 2rem);
-//     color: black;
-//     font-size: 20px;
-//     line-height: 1.6;
-// }
+$salmonColor: #ff6f61;
+$beigeColor: #ffcccb;
+$blackColor: #1e1212;
+$yellowColor: #f6edb9;
+$turquoiseColor: #b9f6ed;
+$turquoiseSecondaryColor: #369788;
+$whiteColor: #f3f7f7;
 
-// h1 {
-//     font-size: 4rem;
-//     font-weight: 700;
-//     line-height: 1;
-//     text-align: center;
-//     margin-bottom: 1em;
-// }
+$maxWidth: 800px;
+$buttonPadding: 10px 20px;
+$borderRadius: 15px;
 
-$primaryColor: #ff6f61;
-$secondaryColor: #ffcccb;
-$highlightColor: #00bfa6;
-$fontStack: 'Arial, sans-serif';
+@mixin graphicBox {
+    border-radius: $borderRadius;
+    padding: $buttonPadding;
+    border: 2px solid $blackColor;
+    -webkit-box-shadow: 4px 2px 4px 0px rgba(30, 18, 18, 1);
+    -moz-box-shadow: 4px 2px 4px 0px rgba(30, 18, 18, 1);
+    box-shadow: 4px 2px 4px 0px rgba(30, 18, 18, 1);
+    text-align: center;
+}
+
+@font-face {
+    font-family: 'notosansmono-bold';
+    src: url('/fonts/NotoSansMono/NotoSansMono-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'notosansmono';
+    src: url('/fonts/NotoSansMono/NotoSansMono-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    background: linear-gradient(90deg, $primaryColor, $secondaryColor);
-    margin: 0;
-    color: #333;
+    background: linear-gradient(90deg, $salmonColor, $beigeColor);
+    overflow-x: hidden;
+    color: $blackColor;
+    font-family: 'notosansmono';
 }
 
-.layoutBody {
-    padding: 20px;
+h2 {
+    font-size: 1rem;
 }
 
-.homeMain {
-    text-align: center;
+a {
+    text-decoration: none;
+    color: $blackColor;
+}
 
-    .challengeSection {
-        margin: 20px 0;
+ul {
+    list-style: none;
+}
+
+.main {
+    max-width: $maxWidth;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 1em;
+
+    .currentDate {
+        background-color: $yellowColor;
+        @include graphicBox()
+    }
+
+    .currentChallenge {
+        background-color: $turquoiseColor;
+        @include graphicBox();
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        font-family: 'notosansmono-bold';
 
         .ctaLink {
-            color: #fff;
-            background-color: $highlightColor;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s;
+            background-color: $turquoiseSecondaryColor;
+            @include graphicBox();
+            color: $whiteColor;
+            box-shadow: none;
+        }
+    }
 
-            &:hover {
-                background-color: $highlightColor;
-            }
+    .FAQ {
+        margin-top: 3rem;
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        ul li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
         }
     }
 }

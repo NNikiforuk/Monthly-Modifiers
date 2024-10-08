@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
 
-import { challenges } from "../index.astro";
+import { challenges } from "../../data/challenges";
 
 export async function getStaticPaths() {
 	return challenges.map((challenge) => ({
@@ -19,7 +19,7 @@ if (!challenge) {
 ---
 
 <Layout title={`Challenge: ${challenge.title}`}>
-	<Navigation pageName="task" />
+	<Navigation pageName="Current challenge" />
 	<main>
 		<h1>{challenge.title}</h1>
 		<p>{challenge.description}</p>
