@@ -1,0 +1,47 @@
+import { challenges } from "../data/challenges";
+import { XORShift } from "random-seedable";
+
+async function getCurrentChallenge() {
+	const url = `https://beacon.nist.gov/beacon/2.0/pulse/last`;
+
+	try {
+		const response = await fetch(url);
+		const data = await response.json();
+		const randomValue = data.pulse.outputValue;
+
+		const seed = BigInt("0x" + randomValue);
+		const randomNumberGenerator = new XORShift(seed);
+
+		let numberOfChallenges = 1 + (randomNumberGenerator.int() % 3);
+
+		let currentChallengesList = [...challenges]; 
+		let newChallenges = [];
+		for (let i = 0; i < numberOfChallenges; i++) {
+			let challenge =
+				randomNumberGenerator.int() % currentChallengesList.length;
+			const newChallenge = currentChallengesList.splice(challenge, 1);
+
+			newChallenges.push(newChallenge);
+		}
+
+		return newChallenges[0];
+	} catch (error) {
+		console.error("Error fetching NIST Randomness Beacon:", error);
+		return {
+			slug: "error",
+			title: "Error",
+			description: "Could not fetch challenge. Please try again later",
+			FAQ: [
+				{
+					title: "What should I do if I see this error?",
+					answer:
+						"Refresh the page or try again later. If the problem persists, contact support",
+				},
+			],
+		};
+	}
+}
+
+getCurrentChallenge();
+
+export { getCurrentChallenge };

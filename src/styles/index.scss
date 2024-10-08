@@ -43,8 +43,8 @@
 
     .challengeDesc {
         background-color: $greenColor;
-        @include graphicBox();
         margin: 1rem 0;
+        @include graphicBox();
 
         h2 {
             font-family: 'notosansmono-bold';
