@@ -74,6 +74,9 @@
 
     .challengeTitle {
         background-color: $pinkColor;
+        width: 100%;
+        border-radius: $borderRadius;
+        border: $border;
         @include graphicBox();
 
         h2 {
@@ -84,6 +87,9 @@
     .challengeDesc {
         background-color: $greenColor;
         margin: 1rem 0;
+        width: 100%;
+        border-radius: $borderRadius;
+        border: $border;
         @include graphicBox();
 
         h2 {
@@ -131,6 +137,10 @@
             .ctaLink:hover {
                 background-color: $turquoiseTertiaryColor;
             }
+        }
+
+        .challengeTitle, .challengeDesc {
+            width: 70%;
         }
 
         .FAQ ul li {
