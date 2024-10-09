@@ -1,0 +1,18 @@
+---
+import "../styles/index.scss";
+import Navigation from "../components/Navigation.astro";
+import Layout from "../layouts/Layout.astro";
+import { challenges } from "../data/challenges";
+---
+
+<Layout title="All challenges">
+	<Navigation pageName="All challenges" />
+	<main class="main">
+		<section class="list">
+			<h2>Here is the list of all challenges:</h2>
+			<ol>
+				{challenges.map((challenge) => <li>{challenge.title.toLowerCase()}</li>)}
+			</ol>
+		</section>
+	</main>
+</Layout>
