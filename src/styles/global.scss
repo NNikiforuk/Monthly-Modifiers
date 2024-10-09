@@ -22,11 +22,10 @@ $buttonPadding2560px: 50px 100px;
 $borderRadius: 15px;
 $fontSize2560px: 1.8rem;
 $fontSize3840px: 2.5rem;
+$border: 2px solid $blackColor;
 
 @mixin graphicBox {
-    border-radius: $borderRadius;
     padding: $buttonPadding;
-    border: 2px solid $blackColor;
     -webkit-box-shadow: 4px 2px 4px 0px rgba(30, 18, 18, 1);
     -moz-box-shadow: 4px 2px 4px 0px rgba(30, 18, 18, 1);
     box-shadow: 4px 2px 4px 0px rgba(30, 18, 18, 1);
@@ -34,17 +33,9 @@ $fontSize3840px: 2.5rem;
 
     @media (min-width: 768px) {
         padding: $buttonPadding768px;
-        max-width: $maxWidth;
     }
 
-    @media (min-width: 2560px) {
-        padding: $buttonPadding2560px;
-        max-width: $maxWidth2560px;
-    }
-
-    @media (min-width: 3840px) {
-        max-width: $maxWidth3840px;
-    }
+    
 }
 
 @font-face {

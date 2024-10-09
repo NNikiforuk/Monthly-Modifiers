@@ -25,7 +25,7 @@ export async function getCurrentChallenges() {
 
 			newChallenges.push(newChallenge);
 		}
-		
+
 		return newChallenges;
 	} catch (error) {
 		console.error("Error fetching NIST Randomness Beacon:", error);

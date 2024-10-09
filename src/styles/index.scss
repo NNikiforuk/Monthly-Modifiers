@@ -1,7 +1,8 @@
 @import "./global.scss";
 
 .main {
-    max-width: $maxWidth;
+    max-width: 400px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,6 +12,13 @@
 
     .currentDate {
         background-color: $yellowColor;
+        border-top-left-radius: $borderRadius;
+        border-top-right-radius: $borderRadius;
+        border-top: $border;
+        border-bottom: none;
+        border-left: $border;
+        border-right: $border;
+        width: 100%;
         @include graphicBox()
     }
 
@@ -19,8 +27,12 @@
         background-color: $turquoiseColor;
         gap: 1.5rem;
         flex-direction: column;
-        margin: 1rem 0;
+        margin-bottom: 1rem;
         display: flex;
+        border: $border;
+        border-bottom-left-radius: $borderRadius;
+        border-bottom-right-radius: $borderRadius;
+        width: 100%;
         @include graphicBox();
 
         .challengeContainer {
@@ -32,6 +44,11 @@
                 color: $whiteColor;
                 box-shadow: none;
                 background-color: $turquoiseSecondaryColor;
+                border-radius: $borderRadius;
+                border: $border;
+                width: 90%;
+                max-width: 400px;
+                margin: 0 auto;
                 @include graphicBox();
             }
         }
@@ -74,7 +91,7 @@
 
 @media screen and (min-width: 768px) {
     .main {
-        max-width: $maxWidth768px;
+        max-width: 500px;
         margin: 2rem auto;
 
         .FAQ ul li {
@@ -85,8 +102,8 @@
 
 @media screen and (min-width: 1200px) {
     .main {
-        max-width: $maxWidth1200px;
         margin: 2rem auto 4rem auto;
+        max-width: 700px;
 
         .currentChallenge {
             .ctaLink {
@@ -106,9 +123,7 @@
 
 @media screen and (min-width: 2560px) {
     .main {
-        .currentChallenge {
-            margin: 2rem 0;
-        }
+        max-width: 1200px;
 
         .FAQ {
             h2 {
@@ -127,16 +142,22 @@
 }
 
 @media screen and (min-width: 3840px) {
-    .main .FAQ {
-        h2 {
-            margin-bottom: 2em;
-        }
+    .main {
+        max-width: 1400px;
 
-        ul li {
-            margin-bottom: 3rem;
+        .FAQ {
+            margin-top: 10rem;
+            
+            h2 {
+                margin-bottom: 2em;
+            }
 
-            img {
-                width: 45px;
+            ul li {
+                margin-bottom: 3rem;
+
+                img {
+                    width: 45px;
+                }
             }
         }
     }
