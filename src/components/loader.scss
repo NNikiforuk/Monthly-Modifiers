@@ -1,0 +1,41 @@
+@import "../styles/global.scss";
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+    .thumb {
+        width: 10px;
+        height: 30px;
+        background-color: $turquoiseSecondaryColor;
+        margin: 4px;
+        box-shadow: 0 0 12px 3px $turquoiseSecondaryColor;
+        animation: loading 1.5s ease-in-out infinite;
+    }
+
+    .thumb1 {
+        animation-delay: 0s;
+    }
+    .thumb2 {
+        animation-delay: 0.5s;
+    }
+    .thumb3 {
+        animation-delay: 1s;
+    }
+}
+
+@keyframes loading {
+    0% {}
+
+    20% {
+        background: $turquoiseColor;
+        transform: scale(1.1);
+    }
+
+    40% {
+        background: $turquoiseTertiaryColor;
+        transform: scale(1);
+    }
+}

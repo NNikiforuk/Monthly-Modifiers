@@ -9,7 +9,6 @@
     margin: 1rem auto;
     padding: 1em;
 
-
     .currentDate {
         background-color: $yellowColor;
         @include graphicBox()
@@ -24,11 +23,17 @@
         display: flex;
         @include graphicBox();
 
-        .ctaLink {
-            color: $whiteColor;
-            box-shadow: none;
-            background-color: $turquoiseSecondaryColor;
-            @include graphicBox();
+        .challengeContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+            .ctaLink {
+                color: $whiteColor;
+                box-shadow: none;
+                background-color: $turquoiseSecondaryColor;
+                @include graphicBox();
+            }
         }
     }
 

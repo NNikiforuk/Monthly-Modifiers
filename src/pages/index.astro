@@ -2,6 +2,7 @@
 import "../styles/index.scss";
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
+import Loader from "../components/Loader.astro";
 
 const currentMonth = new Date().toLocaleString("default", { month: "long" });
 const boltIcon = "/icons/bolt.svg";
@@ -15,12 +16,10 @@ const boltIcon = "/icons/bolt.svg";
 		</section>
 		<section class="currentChallenge">
 			<h2>Current challenges:</h2>
-			<ul>
-				<li id="loading">Loading...</li>
-				<li id="firstChallenge"></li>
-				<li id="secondChallenge"></li>
-				<li id="thirdChallenge"></li>
-			</ul>
+			<div id="loading">
+				<Loader />
+			</div>
+			<div id="challengesContainer" class="challengeContainer"></div>
 		</section>
 		<section class="FAQ">
 			<h2>FAQ</h2>

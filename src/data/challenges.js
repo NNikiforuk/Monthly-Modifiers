@@ -37,8 +37,8 @@ export const challenges = [
 		],
 	},
 	{
-		slug: "vegetarian-month",
-		title: "VEGETARIAN MONTH",
+		slug: "no-meat",
+		title: "NO MEAT",
 		description: "Adopt a vegetarian diet for a month",
 		FAQ: [
 			{
@@ -48,9 +48,9 @@ export const challenges = [
 		],
 	},
 	{
-		slug: "no-snacks-between-meals",
-		title: "NO SNACKS BETWEEN MEALS",
-		description: "Eat only during designated meal times",
+		slug: "no-snacks",
+		title: "NO SNACKS",
+		description: "Eat only during designated meal times. No snacks between",
 	},
 	{
 		slug: "no-coffee",
@@ -75,7 +75,7 @@ export const challenges = [
 	},
 	{
 		slug: "no-soda",
-		title: "NO SODA OR FIZZY DRINKS",
+		title: "NO SODA",
 		description: "Eliminate all carbonated beverages",
 		FAQ: [
 			{
@@ -150,11 +150,6 @@ export const challenges = [
 		],
 	},
 	{
-		slug: "only-film-music",
-		title: "FILM MUSIC ONLY",
-		description: "For a month you can only listen to film music",
-	},
-	{
 		slug: "no-sitting",
 		title: "NO SITTING",
 		description: "Minimize sitting throughout the day",
@@ -167,7 +162,7 @@ export const challenges = [
 	},
 	{
 		slug: "cold-showers-only",
-		title: "COLD SHOWERS ONLY",
+		title: "COLD SHOWERS",
 		description: "Take only cold showers",
 		FAQ: [
 			{
@@ -178,7 +173,7 @@ export const challenges = [
 	},
 	{
 		slug: "no-elevators",
-		title: "NO ELEVATORS / ESCALATORS",
+		title: "NO ELEVATORS",
 		description: "Use stairs instead of elevators or escalators",
 		FAQ: [
 			{
@@ -225,11 +220,6 @@ export const challenges = [
 		],
 	},
 	{
-		slug: "no-hair-products",
-		title: "USE HAIR CONDITIONER",
-		description: "Use hair conditioner for a month",
-	},
-	{
 		slug: "no-makeup",
 		title: "NO MAKEUP",
 		description: "Go without wearing any makeup",
@@ -242,7 +232,7 @@ export const challenges = [
 	},
 	{
 		slug: "time-outside",
-		title: "MINIMUM 15 MINUTES OUTSIDE PER DAY",
+		title: "TIME OUTSIDE",
 		description: "Go outside for min. 15 minutes and enjoy yourself",
 		FAQ: [
 			{
