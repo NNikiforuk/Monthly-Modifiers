@@ -7,9 +7,13 @@ const { pageName } = Astro.props;
 <nav class="nav">
 	<h1 class="siteTitle"><a class="home" href="/">Monthly Modifiers</a></h1>
 	{
-		pageName === "Current challenge" && (
-			<a class="backLink" href="/">
+		pageName === "Current challenge" ? (
+			<a class="link" href="/">
 				Home
+			</a>
+		) : (
+			<a class="link linkChallenges" href="/list-of-challenges">
+				Challenges
 			</a>
 		)
 	}

@@ -4,47 +4,61 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 1em;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
 
     .siteTitle {
         font-size: 1rem;
-        max-width: 50px;
         font-family: 'notosansmono-bold';
     }
 
-    .backLink {
+    .linkChallenges {
+        text-align: end;
+    }
+
+    .link {
+        width: 130px;
         text-decoration: none;
-        font-size: 1.2rem;
+        font-size: .9rem;
         transition: .6s;
     }
 
-    .backLink:hover {
+    .link:hover {
         color: $graySecondaryColor;
     }
 }
 
 @media screen and (min-width: 768px) {
     .nav {
-        margin: 0 1rem;
+        max-width: 500px;
     }
 }
 
 @media screen and (min-width: 1200px) {
     .nav {
-        margin: 0 5rem;
+        max-width: 700px;
     }
 }
 
 @media screen and (min-width: 1920px) {
     .nav {
-        margin: 0 10rem;
-        padding: 50px;
+        padding: 50px 1em;
     }
 }
 
 @media screen and (min-width: 2560px) {
     .nav {
-        margin: 0 20rem;
+        max-width: 1200px;
+
+        .link {
+            width: 150px;
+        }
+
+        .linkChallenges {
+            font-size: 1.5rem;
+        }
 
         .siteTitle {
             font-size: $fontSize2560px;
@@ -54,7 +68,15 @@
 
 @media screen and (min-width: 3840px) {
     .nav {
-        margin: 0 40rem;
+        max-width: 1400px;
+
+        .link {
+            width: 200px;
+        }
+
+        .linkChallenges {
+            font-size: 2rem;
+        }
 
         .siteTitle {
             font-size: $fontSize3840px;

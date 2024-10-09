@@ -11,11 +11,6 @@ $greenColor: #a7cdb3;
 $grayColor: #cecfce;
 $graySecondaryColor: #6f726f;
 
-$maxWidth: 400px;
-$maxWidth768px: 550px;
-$maxWidth1200px: 1400px;
-$maxWidth2560px: 700px;
-$maxWidth3840px: 900px;
 $buttonPadding: 10px 20px;
 $buttonPadding768px: 20px 40px;
 $buttonPadding2560px: 50px 100px;
@@ -34,8 +29,6 @@ $border: 2px solid $blackColor;
     @media (min-width: 768px) {
         padding: $buttonPadding768px;
     }
-
-    
 }
 
 @font-face {

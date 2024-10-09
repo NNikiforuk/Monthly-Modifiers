@@ -145,9 +145,13 @@
     .main {
         max-width: 1400px;
 
+        .currentDate {
+            margin-top: 5rem;
+        }
+
         .FAQ {
             margin-top: 10rem;
-            
+
             h2 {
                 margin-bottom: 2em;
             }
