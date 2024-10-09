@@ -150,7 +150,7 @@ export const challenges = [
 		],
 	},
 	{
-		slug: "no-music",
+		slug: "only-film-music",
 		title: "FILM MUSIC ONLY",
 		description: "For a month you can only listen to film music",
 	},

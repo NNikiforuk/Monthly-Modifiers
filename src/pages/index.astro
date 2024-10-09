@@ -2,7 +2,6 @@
 import "../styles/index.scss";
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
-import { challenges } from "../data/challenges";
 
 const currentMonth = new Date().toLocaleString("default", { month: "long" });
 const boltIcon = "/icons/bolt.svg";
@@ -15,10 +14,13 @@ const boltIcon = "/icons/bolt.svg";
 			<h2>Current month: {currentMonth}</h2>
 		</section>
 		<section class="currentChallenge">
-			<h2>Current challenge:</h2>
-			<a href={`/challenges/${challenges[25].slug}`} class="ctaLink"
-				>{challenges[25].title}</a
-			>
+			<h2>Current challenges:</h2>
+			<ul>
+				<li id="loading">Loading...</li>
+				<li id="firstChallenge"></li>
+				<li id="secondChallenge"></li>
+				<li id="thirdChallenge"></li>
+			</ul>
 		</section>
 		<section class="FAQ">
 			<h2>FAQ</h2>
@@ -40,4 +42,4 @@ const boltIcon = "/icons/bolt.svg";
 	</main>
 </Layout>
 
-<script src="../scripts/getChallenges.js"></script>
+<script src="../scripts/createChallenges.js"></script>

@@ -1,30 +1,32 @@
 import { challenges } from "../data/challenges";
 import { XORShift } from "random-seedable";
 
-async function getCurrentChallenge() {
+export async function getCurrentChallenges() {
 	const url = `https://beacon.nist.gov/beacon/2.0/pulse/last`;
 
 	try {
 		const response = await fetch(url);
 		const data = await response.json();
-		const randomValue = data.pulse.outputValue;
+		const randomValue = data.pulse.listValues.find(
+			(item) => item.type === "month"
+		).value;
 
 		const seed = BigInt("0x" + randomValue);
 		const randomNumberGenerator = new XORShift(seed);
-
 		let numberOfChallenges = 1 + (randomNumberGenerator.int() % 3);
 
-		let currentChallengesList = [...challenges]; 
+		let currentChallengesList = [...challenges];
 		let newChallenges = [];
+
 		for (let i = 0; i < numberOfChallenges; i++) {
 			let challenge =
 				randomNumberGenerator.int() % currentChallengesList.length;
-			const newChallenge = currentChallengesList.splice(challenge, 1);
+			const newChallenge = currentChallengesList.splice(challenge, 1)[0];
 
 			newChallenges.push(newChallenge);
 		}
-
-		return newChallenges[0];
+		
+		return newChallenges;
 	} catch (error) {
 		console.error("Error fetching NIST Randomness Beacon:", error);
 		return {
@@ -42,6 +44,4 @@ async function getCurrentChallenge() {
 	}
 }
 
-getCurrentChallenge();
-
-export { getCurrentChallenge };
+// getCurrentChallenges()
