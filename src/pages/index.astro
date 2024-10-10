@@ -2,35 +2,29 @@
 import "../styles/index.scss";
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
-import Loader from "../components/Loader.astro";
 import Accordion from "../components/Accordion.astro";
+import Loader from "../components/Loader.astro";
 
 const currentMonth = new Date().toLocaleString("default", { month: "long" });
-const faqHomepage = {
-	title: "FAQ",
-	answers: [
-		"This site provides challenges to motivate you to improve yourself",
-		"Every month we draw a challenge using the NIST Randomness Beacon",
-		"Show off your current challenge on your socials",
-	],
-};
 ---
 
 <Layout title="Monthly Modifiers">
 	<Navigation pageName="home" />
 	<main class="main">
-		<section class="currentDate">
-			<h2>Current month: {currentMonth}</h2>
-		</section>
-		<section class="currentChallenge">
-			<h2>Current challenges:</h2>
-			<div id="loading">
-				<Loader />
+		<section class="box">
+			<div class="currentDate">
+				<h2>Current month: {currentMonth}</h2>
 			</div>
-			<div id="challengesContainer" class="challengeContainer"></div>
+			<div class="currentChallenge">
+				<h2>Current challenges:</h2>
+				<div id="loading">
+					<Loader />
+				</div>
+				<div id="challengesContainer" class="challengeContainer"></div>
+			</div>
 		</section>
 		<section class="FAQ">
-			<Accordion faqHomepage={faqHomepage} />
+			<Accordion homepage={true} />
 		</section>
 	</main>
 </Layout>

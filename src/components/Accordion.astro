@@ -2,36 +2,45 @@
 import "./accordion.scss";
 
 interface Props {
-	faqHomepage: {
-		title: string;
-		answers: string[];
-	};
+	homepage: boolean
 }
 
-const { faqHomepage } = Astro.props;
+const { homepage } = Astro.props;
 ---
 
 <section class="accordion">
-	<button class="accordion-header">
-		<span>{faqHomepage.title}</span>
+	{homepage ? (
+<button class="header">
+		<h2>FAQ</h2>
 		<span class="icon">+</span>
 	</button>
-	<div class="accordion-content">
-		{faqHomepage.answers.map(item => (
-			<p>{item}</p>
-		))}
+	<div class="content">
+		<div class="item">
+			<i>ϟ</i>
+			<p>This site provides challenges to motivate you to improve yourself</p>
+		</div>
+		<div class="item">
+			<i>ϟ</i>
+			<p>Every month we draw a challenge using the NIST Randomness Beacon</p>
+			</div>
+		<div class="item">
+			<i>ϟ</i>
+			<p>Show off your current challenge on your socials</p>
+		</div>
 	</div>
+	) : (
+		<button>dsgf</button>
+	)}
+
 </section>
 
 <script>
 	document.addEventListener("DOMContentLoaded", () => {
-		const accordions = document.querySelectorAll(".accordion");
+		const accordion = document.querySelector(".accordion");
 
-		accordions.forEach((accordion) => {
-			const header = accordion.querySelector(".accordion-header");
-			header?.addEventListener("click", () => {
-				accordion.classList.toggle("active");
-			});
+		const header = accordion?.querySelector(".header");
+		header?.addEventListener("click", () => {
+			accordion?.classList.toggle("active");
 		});
 	});
 </script>
