@@ -4,7 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
 
 import { challenges } from "../../data/challenges";
-import Accordion from "../../components/Accordion.astro";
+// import Accordion from "../../components/Accordion.astro";
 
 export async function getStaticPaths() {
 	return challenges.map((challenge) => ({
@@ -31,6 +31,6 @@ if (!challenge) {
 			<h2>Description:</h2>
 			<p>{challenge.description}</p>
 		</section>
-		{challenge.FAQ && <Accordion faq={challenge.FAQ} />}
+		<!-- {challenge.FAQ && <Accordion faq={challenge.FAQ} homepage={false} />} -->
 	</main>
 </Layout>

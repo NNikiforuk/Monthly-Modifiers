@@ -3,9 +3,17 @@ import "../styles/index.scss";
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Loader from "../components/Loader.astro";
+import Accordion from "../components/Accordion.astro";
 
 const currentMonth = new Date().toLocaleString("default", { month: "long" });
-const boltIcon = "/icons/bolt.svg";
+const faqHomepage = {
+	title: "FAQ",
+	answers: [
+		"This site provides challenges to motivate you to improve yourself",
+		"Every month we draw a challenge using the NIST Randomness Beacon",
+		"Show off your current challenge on your socials",
+	],
+};
 ---
 
 <Layout title="Monthly Modifiers">
@@ -22,21 +30,7 @@ const boltIcon = "/icons/bolt.svg";
 			<div id="challengesContainer" class="challengeContainer"></div>
 		</section>
 		<section class="FAQ">
-			<h2>FAQ</h2>
-			<ul>
-				<li>
-					<img src={boltIcon} height="auto" width="20" alt="bolt icon" />
-					This site provides challenges to motivate you to improve yourself
-				</li>
-				<li>
-					<img src={boltIcon} height="auto" width="20" alt="bolt icon" />
-					Every month we draw a challenge using the NIST Randomness Beacon
-				</li>
-				<li>
-					<img src={boltIcon} height="auto" width="20" alt="bolt icon" />
-					Show off your current challenge on your socials
-				</li>
-			</ul>
+			<Accordion faqHomepage={faqHomepage} />
 		</section>
 	</main>
 </Layout>

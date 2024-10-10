@@ -1,20 +1,37 @@
 ---
 import "./accordion.scss";
 
-const { faq } = Astro.props;
+interface Props {
+	faqHomepage: {
+		title: string;
+		answers: string[];
+	};
+}
+
+const { faqHomepage } = Astro.props;
 ---
 
 <section class="accordion">
-	<ul>
-		{
-			faq.map((el: { title: string; answer: string }) => (
-				<li>
-					<input type="checkbox" checked />
-					<i />
-					<h2>{el.title}</h2>
-					<p>{el.answer}</p>
-				</li>
-			))
-		}
-	</ul>
+	<button class="accordion-header">
+		<span>{faqHomepage.title}</span>
+		<span class="icon">+</span>
+	</button>
+	<div class="accordion-content">
+		{faqHomepage.answers.map(item => (
+			<p>{item}</p>
+		))}
+	</div>
 </section>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const accordions = document.querySelectorAll(".accordion");
+
+		accordions.forEach((accordion) => {
+			const header = accordion.querySelector(".accordion-header");
+			header?.addEventListener("click", () => {
+				accordion.classList.toggle("active");
+			});
+		});
+	});
+</script>

@@ -14,7 +14,6 @@ $blueColor: #cbcff4;
 
 $buttonPadding: 10px 20px;
 $buttonPadding768px: 20px 40px;
-$buttonPadding2560px: 50px 100px;
 $borderRadius: 15px;
 $fontSize2560px: 1.8rem;
 $fontSize3840px: 2.5rem;
@@ -84,15 +83,33 @@ ul {
     list-style: none;
 }
 
+.hero {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
 @media screen and (min-width: 2560px) {
-    body, h1, h2 {
+
+    body,
+    h1,
+    h2 {
         font-size: $fontSize2560px;
     }
 }
 
 
 @media screen and (min-width: 3840px) {
-    body, h1, h2 {
+
+    body,
+    h1,
+    h2 {
         font-size: $fontSize3840px;
     }
 }

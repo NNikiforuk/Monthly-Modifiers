@@ -2,6 +2,7 @@
 import Footer from "../components/Footer.astro";
 import "../styles/global.scss";
 
+import movie from "/movies/bg.mp4";
 const { title } = Astro.props;
 ---
 
@@ -16,6 +17,9 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<video playsinline autoplay muted loop class="hero">
+			<source src={movie} type="video/mp4" />
+		</video>
 		<slot />
 		<Footer />
 	</body>
