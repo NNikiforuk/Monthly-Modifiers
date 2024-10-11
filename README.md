@@ -5,7 +5,7 @@
   <h4 align="center">Commercial website for polish language school</h4>
   <br>
   <h4 align="center">
-   <img src="https://github.com/user-attachments/assets/63361751-e185-4357-92c9-de14288127c7" width="350" h="auto"/>
+   <img src="https://github.com/user-attachments/assets/03c9ed3c-d778-44d5-8953-895c2211cf3a" width="350" h="auto"/>
     </h4>
 </h1>
  
