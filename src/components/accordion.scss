@@ -4,66 +4,108 @@
     margin-bottom: 1em;
     width: 100%;
 
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: $pinkColor;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        @include graphicBoxHeader;
-        @include graphicBox;
-
-        h2 {
-            margin-bottom: 0;
-            font-family: "notosansmono";
-        }
-
-        .icon {
-            font-size: 24px;
-            transition: transform 0.3s ease;
-        }
-    }
-
-    .content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        background-color: $pinkSecondaryColor;
-        padding: 0 !important;
-        @include graphicBoxContent;
-        @include graphicBox;
-
-        .item {
+    .section {
+        .header {
             display: flex;
-            align-items: flex-start;
-            padding: 1em;
-            gap: 1em;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $pinkColor;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            @include graphicBoxHeader;
+            @include graphicBox;
+
+            h2 {
+                margin-bottom: 0;
+                padding-right: 1em;
+                font-family: "notosansmono";
+            }
+
+            .icon {
+                font-size: 24px;
+                transition: transform 0.3s ease;
+            }
         }
 
-        p {
+        .headerChallenge {
             text-align: left;
-            margin: 0;
-        }
-    }
-
-    &.active {
-        .header .icon {
-            transform: rotate(45deg);
         }
 
         .content {
-            max-height: 1000px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background-color: $pinkSecondaryColor;
+            padding: 0 !important;
+            @include graphicBoxContent;
+            @include graphicBox;
+
+            .item {
+                display: flex;
+                align-items: flex-start;
+                padding: 1em;
+                gap: 1em;
+            }
+
+            p {
+                text-align: left;
+                margin: 0;
+            }
         }
     }
 }
 
-@media screen and (min-width: 2560px) {
-    .accordion {
+.accordionExtended .section {
+    .header {
+        border-radius: 0;
+    }
+
+    .content {
+        margin-bottom: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: 0;
+        border-top: 0;
+    }
+
+    &:first-of-type .header {
+        border-top-left-radius: $borderRadius;
+        border-top-right-radius: $borderRadius;
+    }
+
+    &:last-of-type {
+
+        .content,
         .header {
-            .icon {
-                font-size: 3.5rem;
-            }
+            border-bottom-left-radius: $borderRadius;
+            border-bottom-right-radius: $borderRadius;
         }
+
+        &.active .header {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+}
+
+.accordion .active {
+    .header .icon {
+        transform: rotate(45deg);
+    }
+
+    .content {
+        max-height: 1000px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .accordion .section .content .item {
+        padding: $buttonPadding768px
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .accordion .section .header .icon {
+        font-size: 3.5rem;
     }
 }

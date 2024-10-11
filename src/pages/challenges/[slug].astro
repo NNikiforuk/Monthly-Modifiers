@@ -4,7 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
 
 import { challenges } from "../../data/challenges";
-// import Accordion from "../../components/Accordion.astro";
+import Accordion from "../../components/Accordion.astro";
 
 export async function getStaticPaths() {
 	return challenges.map((challenge) => ({
@@ -18,6 +18,17 @@ const challenge = challenges.find((c) => c.slug === slug);
 if (!challenge) {
 	throw new Error(`Challenge not found for slug: ${slug}`);
 }
+
+const FAQ = [
+	{
+		title: "Does this include digital products?",
+		answer: "Yes, avoid all online purchases",
+	},
+	{
+		title: "What about groceries?",
+		answer: "No",
+	},
+];
 ---
 
 <Layout title={`Challenge: ${challenge.title}`}>
@@ -31,6 +42,7 @@ if (!challenge) {
 			<h2>Description:</h2>
 			<p>{challenge.description}</p>
 		</section>
-		<!-- {challenge.FAQ && <Accordion faq={challenge.FAQ} homepage={false} />} -->
+		<!-- <Accordion homepage={false} FAQ={challenge.FAQ} /> -->
+		<Accordion homepage={false} FAQ={FAQ} />
 	</main>
 </Layout>

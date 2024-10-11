@@ -2,15 +2,20 @@
 import "./accordion.scss";
 
 interface Props {
-	homepage: boolean
+	homepage: boolean,
+	FAQ?: {
+        title: string;
+        answer: string;
+    }[]
 }
 
-const { homepage } = Astro.props;
+const { homepage,FAQ } = Astro.props;
 ---
 
-<section class="accordion">
+<section class={`accordion ${FAQ && FAQ.length > 1 && "accordionExtended"}`}>
 	{homepage ? (
-<button class="header">
+		<div class="section">
+	<button class="header">
 		<h2>FAQ</h2>
 		<span class="icon">+</span>
 	</button>
@@ -28,19 +33,39 @@ const { homepage } = Astro.props;
 			<p>Show off your current challenge on your socials</p>
 		</div>
 	</div>
-	) : (
-		<button>dsgf</button>
+	</div>
+	) : FAQ!.map((item: { title: string; answer: string; }) => (
+		<div class="section">
+			<button class="header headerChallenge">
+				<h2>{item.title}</h2>
+				<span class="icon">+</span>
+			</button>
+			<div class="content">
+				<div class="item">
+					<p>{item.answer}</p>
+				</div>
+			</div>
+		</div>
+	)
 	)}
-
 </section>
 
 <script>
 	document.addEventListener("DOMContentLoaded", () => {
 		const accordion = document.querySelector(".accordion");
+		const sections = accordion?.querySelectorAll(".section");
 
-		const header = accordion?.querySelector(".header");
-		header?.addEventListener("click", () => {
-			accordion?.classList.toggle("active");
-		});
+		sections?.forEach(section => {
+			const header = section.querySelector(".header");
+
+			header?.addEventListener("click", () => {
+				sections.forEach(el => {
+					if (el !== section ) {
+						el.classList.remove("active");
+					}
+				})
+				section.classList.toggle("active");
+			})
+		})
 	});
 </script>

@@ -15,7 +15,9 @@ $blueColor: #cbcff4;
 
 $buttonPadding: 10px 20px;
 $buttonPadding768px: 20px 40px;
+$buttonPadding3840px: 30px 60px;
 $borderRadius: 15px;
+$borderRadiusSecondary: 30px;
 $fontSize2560px: 1.8rem;
 $fontSize3840px: 2.5rem;
 $border: 2px solid $blackColor;
@@ -30,6 +32,10 @@ $border: 2px solid $blackColor;
     @media (min-width: 768px) {
         padding: $buttonPadding768px;
     }
+
+    @media (min-width: 3840px) {
+        padding: $buttonPadding3840px;
+    }
 }
 
 @mixin graphicBoxHeader {
@@ -40,6 +46,11 @@ $border: 2px solid $blackColor;
     border-left: $border;
     border-right: $border;
     width: 100%;
+
+    @media (min-width: 768px) {
+        border-top-left-radius: $borderRadiusSecondary;
+        border-top-right-radius: $borderRadiusSecondary;
+    }
 }
 
 @mixin graphicBoxContent {
@@ -51,6 +62,11 @@ $border: 2px solid $blackColor;
     border-bottom-left-radius: $borderRadius;
     border-bottom-right-radius: $borderRadius;
     width: 100%;
+
+    @media (min-width: 768px) {
+        border-bottom-left-radius: $borderRadiusSecondary;
+        border-bottom-right-radius: $borderRadiusSecondary;
+    }
 }
 
 @font-face {
@@ -118,6 +134,7 @@ ul {
 }
 
 @media screen and (min-width: 2560px) {
+
     body,
     h1,
     h2 {
