@@ -10,9 +10,9 @@ import { challenges } from "../data/challenges";
 	<main class="main">
 		<section class="list">
 			<h2>Here is the list of all challenges:</h2>
-			<ol>
+			<ul>
 				{challenges.map((challenge) => <li>{challenge.title.toLowerCase()}</li>)}
-			</ol>
+			</ul>
 		</section>
 	</main>
 </Layout>
