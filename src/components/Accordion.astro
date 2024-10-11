@@ -34,7 +34,7 @@ const { homepage,FAQ } = Astro.props;
 		</div>
 	</div>
 	</div>
-	) : FAQ!.map((item: { title: string; answer: string; }) => (
+	) : FAQ && FAQ!.map((item: { title: string; answer: string; }) => (
 		<div class="section">
 			<button class="header headerChallenge">
 				<h2>{item.title}</h2>
