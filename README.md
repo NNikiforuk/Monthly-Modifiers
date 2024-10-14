@@ -2,7 +2,7 @@
   <br>
   <p>Monthly Modifiers</p>
 <h4 align="center"> <a href="https://monthlymodifiers.com/" target="_blank">Click to see the project</a></h4>
-  <h4 align="center">Challenges to motivate yourself
+  <h4 align="center">Monthly challenges to motivate yourself
 </h4>
   <br>
   <h4 align="center">
