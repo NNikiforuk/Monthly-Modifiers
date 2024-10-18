@@ -14,9 +14,13 @@
         font-family: 'notosansmono-bold';
     }
 
+    .links {
+        display: flex;
+        gap: 1em;
+    }
+
     .link {
         text-align: end;
-        width: 130px;
         text-decoration: none;
         font-size: .9rem;
         transition: .6s;
@@ -50,7 +54,6 @@
         max-width: 900px;
 
         .link {
-            width: 150px;
             font-size: 1.5rem;
         }
 
@@ -65,7 +68,6 @@
         max-width: 1200px;
 
         .link {
-            width: 200px;
             font-size: 2rem;
         }
 

@@ -2,26 +2,27 @@ export const challenges = [
 	{
 		title: "NO SUGAR",
 		slug: "no-sugar",
-		description: "Give up sugar for a month",
+		description: "Give up sugar for a month. Be a little healthier this month and avoid sweet stuff.",
 		FAQ: [
 			{
-				title: "Can I use any sweetener?",
+				title: "Sweeteners?",
 				answer: "No",
 			},
 			{
 				title: "Are natural sugars in f.e. fruits allowed?",
-				answer: "Yes",
+				answer: "Yes - but only whole fruits, no juices",
 			},
 		],
 	},
 	{
 		title: "ONLY WATER",
 		slug: "only-water",
-		description: "Drink only plain water for a month",
+		collidesWith: ["no-soda", "no-coffee", "no-alcohol"],
+		description: "Drink only water this month. No soda, no tea, no coffee, no nothing. Just plain water. Mineral and carbonated is fine though.",
 		FAQ: [
 			{
 				title: "What about herbal tea?",
-				answer: "No, except you're sick",
+				answer: "Only if you're sick and using it as a remedy",
 			},
 		],
 	},
@@ -43,39 +44,49 @@ export const challenges = [
 		FAQ: [
 			{
 				title: "Can I eat eggs and dairy?",
-				answer: "Yes, unless you choose to go vegan",
+				answer: "Yeah, sure!",
+			},
+			{
+				title: "Fish?",
+				answer: "No",
 			},
 		],
 	},
 	{
-		slug: "no-snacks",
-		title: "NO SNACKS",
-		description: "Eat only during designated meal times. No snacks between",
-	},
-	{
 		slug: "no-coffee",
 		title: "NO COFFEE",
-		description: "Eliminate all sources of coffee",
+		collidesWith: ["only-water"],
+		description: "Eliminate all (major) sources of caffeine. No coffee, no caffeine pills, no energy drinks. And I know this is a little confusing - but tea is fine.",
 	},
 	{
 		slug: "no-alcohol",
 		title: "NO ALCOHOL",
-		description: "Abstain from all alcoholic beverages",
+		collidesWith: ["only-water"],
+		description: "No alcohol of any kind",
 		FAQ: [
 			{
 				title: "What about cooking with alcohol?",
 				answer: "Avoid dishes cooked with alcohol as well",
 			},
+			{
+				title: "Sweets with alcohol?",
+				answer: "Nope",
+			},
+			{
+				title: "Kombucha",
+				answer: "If Kombucha was allowed then liqour chocolates would have to be too. So no.",
+			}
 		],
 	},
 	{
 		slug: "no-fast-food",
 		title: "NO FAST FOOD",
-		description: "Avoid all fast food restaurants and takeaways",
+		description: "Avoid all fast food restaurants and takeaways. No burgers, no fries",
 	},
 	{
 		slug: "no-soda",
 		title: "NO SODA",
+		collidesWith: ["only-water"],
 		description: "Eliminate all carbonated beverages",
 		FAQ: [
 			{
@@ -90,51 +101,28 @@ export const challenges = [
 		description: "No watching TV or streaming services",
 	},
 	{
-		slug: "no-twitter",
-		title: "NO X/TWITTER",
-		description: "Stay off X/Twitter for a month",
+		slug: "no-social-media",
+		title: "NO SOCIAL MEDIA",
+		description: "Stay off Facebook, Instagram, X/Twitter, TikTok, Reddit, etc. for a month",
 		FAQ: [
 			{
-				title: "Can I use other social media?",
-				answer: "Yes, this challenge is specific to X/Twitter.",
-			},
-		],
-	},
-	{
-		slug: "no-instagram",
-		title: "NO INSTAGRAM",
-		description: "Abstain from using Instagram",
-	},
-	{
-		slug: "no-facebook",
-		title: "NO FACEBOOK",
-		description: "Stay off Facebook for a month",
-		FAQ: [
-			{
-				title: "Does this include Facebook Messenger?",
-				answer: "No",
-			},
-		],
-	},
-	{
-		slug: "no-tiktok",
-		title: "NO TIKTOK",
-		description: "Avoid using TikTok",
-		FAQ: [
-			{
-				title: "What about TikTok videos shared on other platforms?",
-				answer: "Avoid those as well",
-			},
+				title: "Youtube?",
+				answer: "Youtube is ok",
+			}
 		],
 	},
 	{
 		slug: "no-video-games",
 		title: "NO VIDEO GAMES",
-		description: "Abstain from playing all video games",
+		description: "Abstain from playing video games",
 		FAQ: [
 			{
 				title: "Does this include mobile games, Nintendo Switch etc?",
 				answer: "Yes, avoid all types of video games",
+			},
+			{
+				title: "I'm a streamer, can I still stream?",
+				answer: "Yes, but you can't play video games on the stream. Stare blankly at the camera or something. You'll figure it out ;)",
 			},
 		],
 	},
@@ -152,12 +140,24 @@ export const challenges = [
 	{
 		slug: "no-sitting",
 		title: "NO SITTING",
-		description: "Minimize sitting throughout the day",
+		description: "No sitting - stand or lay down instead.",
 		FAQ: [
 			{
-				title: "Are there exceptions?",
-				answer: "Yes, when necessary",
+				title: "Driving a car?",
+				answer: "Yes, but ideally take public transport or walk",
 			},
+			{
+				title: "In an airplane?",
+				answer: "Yeah, you can sit in an airplane",
+			},
+			{
+				title: "Cross-legged on the floor?",
+				answer: "No",
+			},
+			{
+				title: "On the toilet?",
+				answer: "You can sit on the toilet - but be quick about your business!",
+			}
 		],
 	},
 	{
@@ -180,6 +180,14 @@ export const challenges = [
 				title: "What about very tall buildings?",
 				answer: "Plan extra time for vertical travel",
 			},
+			{
+				title: "Building with no stairs?",
+				answer: "Last resort - ideally avoid such buildings",
+			},
+			{
+				title: "Travelling for work and coleagues are taking the elevator",
+				answer: "Tough luck, take the stairs. Claim you're afraid of elevators, idk. figure it out.",
+			},
 		],
 	},
 	{
@@ -195,27 +203,13 @@ export const challenges = [
 				title: "What about groceries?",
 				answer: "No",
 			},
-		],
-	},
-	{
-		slug: "no-swearing",
-		title: "NO SWEARING",
-		description: "Eliminate all swear words from your vocabulary",
-		FAQ: [
 			{
-				title: "What counts as a swear word?",
-				answer: "Any word considered profane or offensive in your culture",
+				title: "But I really, really wanna buy X that just came out!",
+				answer: "No",
 			},
-		],
-	},
-	{
-		slug: "no-complaining",
-		title: "NO COMPLAINING",
-		description: "Abstain from all forms of complaining",
-		FAQ: [
 			{
-				title: "How do I express legitimate concerns?",
-				answer: "Frame issues constructively and offer solutions",
+				title: "Preorders that release next month?",
+				answer: "Nice try - no",
 			},
 		],
 	},
@@ -229,16 +223,5 @@ export const challenges = [
 				answer: "No, skincare products are allowed",
 			},
 		],
-	},
-	{
-		slug: "time-outside",
-		title: "TIME OUTSIDE",
-		description: "Go outside for min. 15 minutes and enjoy yourself",
-		FAQ: [
-			{
-				title: "What about the balcony?",
-				answer: "No, it doesn't count",
-			},
-		],
-	},
+	}
 ];
