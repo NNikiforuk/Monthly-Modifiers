@@ -27,6 +27,15 @@
             background-color: $pinkColor;
             @include graphicBoxContent;
             @include graphicBox;
+
+            li a {
+                transition: .6s;
+                cursor: pointer;
+            }
+
+            li a:hover {
+                color: $graySecondaryColor;
+            }
         }
     }
 

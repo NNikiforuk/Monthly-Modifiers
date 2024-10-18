@@ -11,7 +11,15 @@ import { challenges } from "../data/challenges";
 		<section class="list">
 			<h2>Here is the list of all challenges:</h2>
 			<ul>
-				{challenges.map((challenge) => <li>{challenge.title.toLowerCase()}</li>)}
+				{
+					challenges.map((challenge) => (
+						<li>
+							<a href={`/challenges/${challenge.slug}`}>
+								{challenge.title.toLowerCase()}
+							</a>
+						</li>
+					))
+				}
 			</ul>
 		</section>
 	</main>
