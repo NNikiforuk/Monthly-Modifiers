@@ -1,20 +1,15 @@
 ---
 import "./navigation.scss";
-
-const { pageName } = Astro.props;
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
 ---
-
 <nav class="nav">
-	<h1 class="siteTitle"><a class="home" href="/">Monthly Modifiers</a></h1>
-	{
-		pageName === "Current challenge" || pageName === "All challenges" ? (
-			<a class="link" href="/">
-				Home
-			</a>
-		) : (
-			<a class="link" href="/challenges">
-				Challenges
-			</a>
-		)
-	}
+    <h1 class="siteTitle"><a class="home" href="/">Monthly Modifiers</a></h1>
+    <div class="links">
+        { currentPath !== "" &&  (<a class="link" href="/">Home</a>) }
+        { currentPath !== "challenges" &&  (<a class="link" href="/challenges">Challenges</a>) }
+        <a class="link" href="https://github.com/NNikiforuk/Monthly-Modifiers" target="_blank">
+            GitHub
+        </a>
+    </div>
 </nav>

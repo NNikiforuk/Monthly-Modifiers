@@ -2,70 +2,81 @@
 import "./accordion.scss";
 
 interface Props {
-	homepage: boolean,
-	FAQ?: {
-        title: string;
-        answer: string;
-    }[]
+  homepage: boolean;
+  FAQ?: {
+    title: string;
+    answer: string;
+  }[];
 }
 
-const { homepage,FAQ } = Astro.props;
+const { homepage, FAQ } = Astro.props;
 ---
 
 <section class={`accordion ${FAQ && FAQ.length > 1 && "accordionExtended"}`}>
-	{homepage ? (
-		<div class="section">
-	<button class="header">
-		<h2>FAQ</h2>
-		<span class="icon">+</span>
-	</button>
-	<div class="content">
-		<div class="item">
-			<i>ϟ</i>
-			<p>This site provides challenges to motivate you to improve yourself</p>
-		</div>
-		<div class="item">
-			<i>ϟ</i>
-			<p>Every month we draw a challenge using the NIST Randomness Beacon</p>
-			</div>
-		<div class="item">
-			<i>ϟ</i>
-			<p>Show off your current challenge on your socials</p>
-		</div>
-	</div>
-	</div>
-	) : FAQ && FAQ!.map((item: { title: string; answer: string; }) => (
-		<div class="section">
-			<button class="header headerChallenge">
-				<h2>{item.title}</h2>
-				<span class="icon">+</span>
-			</button>
-			<div class="content">
-				<div class="item">
-					<p>{item.answer}</p>
-				</div>
-			</div>
-		</div>
-	)
-	)}
+  {
+    homepage ? (
+      <div class="section active">
+        <button class="header">
+          <h2>What is this?</h2>
+          <span class="icon">+</span>
+        </button>
+        <div class="content">
+          <div class="item">
+            <i>ϟ</i>
+            <p>It's a fun monthly challenge!</p>
+          </div>
+          <div class="item">
+            <i>ϟ</i>
+            <p>
+              Every month a new set of challenges will be calculated. We're
+              using{" "}
+              <a class="highlight" href="https://csrc.nist.gov/projects/interoperable-randomness-beacons/beacon-20">
+                NIST randomness beacon
+              </a>{" "}
+              so that the challenges are fair and random.
+            </p>
+          </div>
+          <div class="item">
+            <i>ϟ</i>
+            <p>Invite your friends and enjoy!</p>
+          </div>
+        </div>
+      </div>
+    ) : (
+      FAQ &&
+      FAQ!.map((item: { title: string; answer: string }) => (
+        <div class="section">
+          <button class="header headerChallenge">
+            <h2>{item.title}</h2>
+            <span class="icon">+</span>
+          </button>
+          <div class="content">
+            <div class="item">
+              <p>{item.answer}</p>
+            </div>
+          </div>
+        </div>
+      ))
+    )
+  }
 </section>
 
 <script>
-	document.addEventListener("DOMContentLoaded", () => {
-		const accordion = document.querySelector(".accordion");
-		const sections = accordion?.querySelectorAll(".section");
+  document.addEventListener("DOMContentLoaded", () => {
+    const accordion = document.querySelector(".accordion");
+    const sections = accordion?.querySelectorAll(".section");
 
-		sections?.forEach(section => {
-			const header = section.querySelector(".header");
+    sections?.forEach((section) => {
+      const header = section.querySelector(".header");
 
-			header?.addEventListener("click", () => {
-				sections.forEach(el => {
-					if (el !== section ) {
-						el.classList.remove("active");
-					}
-				})
-				section.classList.toggle("active");
-			})
-		})
-	});
+      header?.addEventListener("click", () => {
+        sections.forEach((el) => {
+          if (el !== section) {
+            el.classList.remove("active");
+          }
+        });
+        section.classList.toggle("active");
+      });
+    });
+  });
 </script>
