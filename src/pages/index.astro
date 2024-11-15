@@ -4,8 +4,6 @@ import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Accordion from "../components/Accordion.astro";
 import Loader from "../components/Loader.astro";
-
-const currentMonth = new Date().toLocaleString("default", { month: "long" });
 ---
 
 <Layout title="Monthly Modifiers">
@@ -13,7 +11,7 @@ const currentMonth = new Date().toLocaleString("default", { month: "long" });
 	<main class="main">
 		<section class="box">
 			<div class="currentDate">
-				<h2>Current month: {currentMonth}</h2>
+				<h2 id="currentMonth">Current month:</h2>
 			</div>
 			<div class="currentChallenge">
 				<h2>Current challenges:</h2>
@@ -30,3 +28,9 @@ const currentMonth = new Date().toLocaleString("default", { month: "long" });
 </Layout>
 
 <script src="../scripts/createChallenges.js"></script>
+<script>
+	const currentMonthElement = document.querySelector("#currentMonth")! as HTMLHeadingElement;
+	const currentMonth = new Date().toLocaleString("default", { month: "long" });
+
+	currentMonthElement.textContent = `Current month: ${currentMonth}`;
+</script>
