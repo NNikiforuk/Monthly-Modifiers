@@ -10,10 +10,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "astro": "^4.15.12",
+    "@astrojs/check": "^0.9.6",
+    "astro": "^5.16.4",
     "axobject-query": "^4.1.0",
     "random-seedable": "^1.0.8",
-    "typescript": "^5.6.2"
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.93.3"
   }
 }
